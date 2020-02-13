@@ -263,7 +263,7 @@ module Puma
                 @server.lowlevel_error(e, c.env)
 
                 c.write_error(500)
-                c.close
+                c.close rescue nil
 
                 clear_monitor mon
               end
